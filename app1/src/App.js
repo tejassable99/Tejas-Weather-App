@@ -8,7 +8,7 @@ import { faFrown } from '@fortawesome/free-solid-svg-icons';
 import './App.css'; 
 
 
-function GfGWeatherApp() { 
+const App=()=> { 
 	console.log(process.env.REACT_APP_API_KEY
 		)
 	const [input, setInput] = useState(''); 
@@ -137,4 +137,4 @@ function GfGWeatherApp() {
 	); 
 } 
 
-export default GfGWeatherApp;
+export default App;
