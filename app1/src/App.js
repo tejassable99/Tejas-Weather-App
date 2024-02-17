@@ -84,7 +84,7 @@ const App=()=> {
 				<input 
 					type="text"
 					className="city-search"
-					placeholder="Enter City Name.."
+					placeholder="Type Any City Name And Press Enter"
 					name="query"
 					value={input} 
 					onChange={(event) => setInput(event.target.value)} 
