@@ -80,11 +80,11 @@ const App=()=> {
 			<h1 className="app-name"> 
 				Tejas Weather App 
 			</h1> 
-			<div className="search-bar"> 
+			<div > 
 				<input 
 					type="text"
 					className="city-search"
-					placeholder="Type Any City Name And Press Enter"
+					placeholder="Type city name & press Enter"
 					name="query"
 					value={input} 
 					onChange={(event) => setInput(event.target.value)} 
