@@ -53,27 +53,19 @@ const App=()=> {
 			event.preventDefault(); 
 			setInput(''); 
 			setWeather({ ...weather, loading: true }); 
-			const url = 'https://api.openweathermap.org/data/2.5/weather'; 
-			const api_key = process.env.REACT_APP_API_KEY; 
-			await axios 
-				.get(url, { 
-					params: { 
-						q: input, 
-						units: 'metric', 
-						appid: api_key, 
-					}, 
-				}) 
-				.then((res) => { 
-					console.log('res', res); 
-					setWeather({ data: res.data, loading: false, error: false }); 
-				}) 
-				.catch((error) => { 
-					setWeather({ ...weather, data: {}, error: true }); 
-					setInput(''); 
-					console.log('error', error); 
-				}); 
+			const url = `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=${process.env.REACT_APP_API_KEY}`; 
+			try {
+				const res = await axios.get(url); 
+				console.log('res', res); 
+				setWeather({ data: res.data, loading: false, error: false }); 
+			} catch (error) {
+				setWeather({ ...weather, data: {}, error: true }); 
+				setInput(''); 
+				console.log('error', error); 
+			} 
 		} 
 	}; 
+	
 
 	return ( 
 		<div className="App"> 
